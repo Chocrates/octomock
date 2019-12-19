@@ -1,5 +1,3 @@
-jest.mock("@actions/core");
-jest.mock("@actions/github");
 
 const { GitHub, context } = require("@actions/github");
 const core = require("@actions/core");
@@ -53,6 +51,12 @@ class OctoMock {
             owner: this.owner,
             repo: this.repo
         };
+    }
+
+    setup(){
+        jest.mock("@actions/core");
+        jest.mock("@actions/github");
+        return this
     }
 
     resetMocks(){
