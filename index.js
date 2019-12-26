@@ -30,20 +30,20 @@ class octomock {
             GitHub: class {
                 constructor() {
                     this.orgs = {
-                        createInvitation: mockFunctions.createInvitation 
+                        createInvitation: this.mockFunctions.createInvitation 
                     }
                     this.repos = {
-                        getContents: mockFunctions.getContents
+                        getContents: this.mockFunctions.getContents
                     }
                 }
             }
         }
 
         this.mockCoreImplementation = {
-            debug: mockFunctions.debug,
-            info: mockFunctions.info,
-            setFailed: mockFunctions.setFailed,
-            setOutput: mockFunctions.setOutput
+            debug: this.mockFunctions.debug,
+            info: this.mockFunctions.info,
+            setFailed: this.mockFunctions.setFailed,
+            setOutput: this.mockFunctions.setOutput
         }
     }
 
