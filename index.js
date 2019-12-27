@@ -19,9 +19,9 @@ class octomock {
         this.mockFunctions = {
             createInvitation: jest.fn(),
             getContents: jest.fn(),
-            setFailed: jest.fn((message) => { logger.error(`MOCK ERROR: ${message}`)}),
-            debug: jest.fn(message => {logger.info(`MOCK DEBUG: ${message}`)}),
-            info: jest.fn(message => {logger.info(`MOCK INFO: ${message}`)}),
+            setFailed: jest.fn((message) => { this.logger.error(`MOCK ERROR: ${message}`)}),
+            debug: jest.fn(message => {this.logger.info(`MOCK DEBUG: ${message}`)}),
+            info: jest.fn(message => {this.logger.info(`MOCK INFO: ${message}`)}),
             setOutput: jest.fn()
         }
 
