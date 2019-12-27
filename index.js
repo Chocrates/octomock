@@ -16,7 +16,7 @@ class octomock {
             }
         }
 
-        this.mockFunctions = {
+        let mockFunctions = this.mockFunctions = {
             createInvitation: jest.fn(),
             getContents: jest.fn(),
             setFailed: jest.fn((message) => { this.logger.error(`MOCK ERROR: ${message}`)}),
@@ -29,11 +29,11 @@ class octomock {
             context: {},
             GitHub: class {
                 constructor() {
-                    this.orgs = {
-                        createInvitation: this.mockFunctions.createInvitation 
+                    orgs = {
+                        createInvitation: mockFunctions.createInvitation 
                     }
-                    this.repos = {
-                        getContents: this.mockFunctions.getContents
+                    repos = {
+                        getContents: mockFunctions.getContents
                     }
                 }
             }
