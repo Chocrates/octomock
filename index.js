@@ -82,7 +82,7 @@ class octomock {
     setup(){
         jest.mock('@actions/github', () => { return this.mockGitHubImplementation }, {virtual: true})
         jest.mock('@actions/core', () => { return  this.mockCoreImplementation }, {virtual: true})
-        this.updateContext(defaultContext)
+        this.updateContext(this.defaultContext)
     }
 }
 
