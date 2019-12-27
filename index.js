@@ -29,10 +29,10 @@ class octomock {
             context: {},
             GitHub: class {
                 constructor() {
-                    orgs = {
+                    this.orgs = {
                         createInvitation: mockFunctions.createInvitation 
                     }
-                    repos = {
+                    this.repos = {
                         getContents: mockFunctions.getContents
                     }
                 }
