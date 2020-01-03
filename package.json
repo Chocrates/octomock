@@ -19,8 +19,5 @@
   "dependencies": {
     "jest": "^24.9.0",
     "winston": "^3.2.1"
-  },
-    "typings": {
-        "./index.d.ts"
-    }
+  }
 }
