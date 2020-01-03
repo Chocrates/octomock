@@ -1,4 +1,7 @@
 const winston = require('winston')
+const fs = require('fs')
+const path = require('path')
+
 class octomock {
     constructor(){
         this.logger = new winston.createLogger({
@@ -85,6 +88,11 @@ class octomock {
 
     getContext(){
         return this.mockGitHubImplementation.context
+    }
+
+    loadContext(file) {
+        const raw = fs.readFileSync(path.join(__dirname, 'file'), 'utf8')
+        this.mockGitHubImplementation.context = JSON.parse(raw) 
     }
     
     setup(){

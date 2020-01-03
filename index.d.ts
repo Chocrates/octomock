@@ -13,6 +13,7 @@ declare module 'octomock' {
         resetMocks(): void;
         updateContext(context: any): void;
         getContext(): any;
+        loadContext(file: string): void;
         setup(): void;
     }
 }
