@@ -1,17 +1,18 @@
-declare module "octomock" {
-    export interface octomock {
-        logger: any,
-        defaultContext: any,
-        mockFunctions: any,
-        mockGitHubImplementation: any,
-        mockCoreImplementation: any,
-        updateGitHubImplementation: Function,
-        getGitHubImplementation: Function,
-        getCoreImplementation: Function,
-        updateCoreImplementation: Function,
-        resetMocks: Function,
-        updateContext: Function,
-        getContext: Function,
-        setup: Function
+declare module 'octomock' {
+    class octomock {
+        constructor();
+        logger: any;
+        defaultContext: any;
+        mockFunctions: any;
+        mockGitHubImplementation: any;
+        mockCoreImplementation: any;
+        updateGitHubImplementation(implementation: any): void;
+        getGitHubImplementation(): any;
+        getCoreImplementation(): any;
+        updateCoreImplementation(implementation: any): void;
+        resetMocks(): void;
+        updateContext(context: any): void;
+        getContext(): any;
+        setup(): void;
     }
 }

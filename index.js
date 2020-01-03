@@ -22,7 +22,9 @@ class octomock {
             setFailed: jest.fn((message) => { this.logger.error(`MOCK ERROR: ${message}`)}),
             debug: jest.fn(message => {this.logger.info(`MOCK DEBUG: ${message}`)}),
             info: jest.fn(message => {this.logger.info(`MOCK INFO: ${message}`)}),
-            setOutput: jest.fn()
+            setOutput: jest.fn(),
+            getInput: jest.fn(value => value),
+            createComment: jest.fn((message, status) => true)
         }
 
         this.mockGitHubImplementation = {
@@ -32,8 +34,13 @@ class octomock {
                     this.orgs = {
                         createInvitation: mockFunctions.createInvitation 
                     }
+
                     this.repos = {
                         getContents: mockFunctions.getContents
+                    }
+
+                    this.issues = {
+                        createComment: mockFunctions.createComment
                     }
                 }
             }
@@ -43,7 +50,8 @@ class octomock {
             debug: this.mockFunctions.debug,
             info: this.mockFunctions.info,
             setFailed: this.mockFunctions.setFailed,
-            setOutput: this.mockFunctions.setOutput
+            setOutput: this.mockFunctions.setOutput,
+            getInput: this.mockFunctions.getInput
         }
     }
 
