@@ -14,6 +14,7 @@ declare module 'octomock' {
         updateContext(context: any): void;
         getContext(): any;
         loadContext(file: string): void;
+        loadFixture(file: string): string;
         setup(): void;
     }
 }

@@ -97,8 +97,12 @@ class octomock {
     }
 
     loadContext(file) {
-        const raw = fs.readFileSync(path.join(__dirname, 'file'), 'utf8')
+        const raw = fs.readFileSync(path.join(__dirname, '../../', file), 'utf8')
         this.mockGitHubImplementation.context = JSON.parse(raw) 
+    }
+
+    loadFixture(file) {
+        return JSON.parse(fs.readFileSync(path.join(__dirname, '../../', file), 'utf8'))
     }
     
     setup(){
