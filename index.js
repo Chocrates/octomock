@@ -29,7 +29,8 @@ class octomock {
             getInput: jest.fn(value => value),
             createComment: jest.fn((message, status) => true),
             update: jest.fn(),
-            listForRepo: jest.fn()
+            listForRepo: jest.fn(),
+            addLabels: jest.fn()
         }
 
         this.mockGitHubImplementation = {
@@ -47,7 +48,8 @@ class octomock {
                     this.issues = {
                         createComment: mockFunctions.createComment,
                         update: mockFunctions.update,
-                        listForRepo: mockFunctions.listForRepo
+                        listForRepo: mockFunctions.listForRepo,
+                        addLabels: mockFunctions.addLabels
                     }
                 }
             }
