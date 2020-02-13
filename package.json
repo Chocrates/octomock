@@ -20,5 +20,6 @@
     "jest": "^24.9.0",
     "winston": "^3.2.1"
   },
-  "types": "./index.d.ts"
+  "types": "./index.d.ts",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@chocrates" }
 }
