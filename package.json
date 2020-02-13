@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chocrates/OctoMock.git"
+    "url": "git+https://github.com/Chocrates/octomock.git"
   },
   "author": "Chris McIntosh (Chocrates@github.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Chocrates/OctoMock/issues"
+    "url": "https://github.com/Chocrates/octomock/issues"
   },
-  "homepage": "https://github.com/Chocrates/OctoMock#readme",
+  "homepage": "https://github.com/Chocrates/octomock#readme",
   "dependencies": {
     "jest": "^24.9.0",
     "winston": "^3.2.1"
