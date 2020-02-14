@@ -609,8 +609,10 @@ class octomock {
   }
 
   resetMocks() {
-    for (let func in this.mockFunctions) {
-      this.mockFunctions[func].mockClear();
+    for (let ctx in this.mockFunctions) {
+      for (let func in this.mockFunctions[ctx]) {
+        this.mockFunctions[ctx][func].mockClear();
+      }
     }
   }
 
@@ -625,7 +627,10 @@ class octomock {
   }
 
   loadContext(file) {
-    const path = __dirname.indexOf('node_modules/octomock') != -1 ? path.join(__dirname, file) : path.join(__dirname, '../../',file)
+    const path =
+      __dirname.indexOf('node_modules/octomock') != -1
+        ? path.join(__dirname, file)
+        : path.join(__dirname, '../../', file);
     const raw = fs.readFileSync(path, 'utf8');
     this.mockGitHubImplementation.context = JSON.parse(raw);
   }
@@ -637,28 +642,28 @@ class octomock {
   }
 
   loadPushContext() {
-      loadContext('./fixtures/push.json') 
+    loadContext('./fixtures/push.json');
   }
 
-  loadIssueContext(action = 'created'){
-      loadContext('./fixtures/issue_comment.json')
-      this.mockGitHubImplementation.context.event.action = action
+  loadIssueContext(action = 'created') {
+    loadContext('./fixtures/issue_comment.json');
+    this.mockGitHubImplementation.context.event.action = action;
   }
 
-  loadLabelContext(action = 'created'){
-      loadContext('./fixtures/label.json')
-      this.mockGitHubImplementation.context.event.action = action
+  loadLabelContext(action = 'created') {
+    loadContext('./fixtures/label.json');
+    this.mockGitHubImplementation.context.event.action = action;
   }
 
-    loadIssueContext(action = 'opened'){
-        loadContext('./fixtures/issue_created.json')
-        this.mockGitHubImplementation.context.event.action = action
-    }
+  loadIssueContext(action = 'opened') {
+    loadContext('./fixtures/issue_created.json');
+    this.mockGitHubImplementation.context.event.action = action;
+  }
 
-    loadIssueLabeledContext(action = 'labeled'){
-        loadContext('./fixtures/issue_created.json')
-        this.mockGitHubImplementation.context.event.action = action
-    }
+  loadIssueLabeledContext(action = 'labeled') {
+    loadContext('./fixtures/issue_created.json');
+    this.mockGitHubImplementation.context.event.action = action;
+  }
 
   setup() {
     jest.mock(
