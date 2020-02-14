@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write **/*.js",
-    "lint": "eslint **/*.js"
+    "format": "prettier --write **/*.js **/*.json",
+    "lint": "eslint **/*.js **/*.json"
   },
   "repository": {
     "type": "git",
