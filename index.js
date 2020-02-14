@@ -627,11 +627,11 @@ class octomock {
   }
 
   loadContext(file) {
-    const path =
+    const absolute_file_path =
       __dirname.indexOf('node_modules/octomock') != -1
         ? path.join(__dirname, file)
         : path.join(__dirname, '../../', file);
-    const raw = fs.readFileSync(path, 'utf8');
+    const raw = fs.readFileSync(absolute_file_path, 'utf8');
     this.mockGitHubImplementation.context = JSON.parse(raw);
   }
 
