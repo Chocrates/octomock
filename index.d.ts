@@ -16,10 +16,10 @@ declare module "octomock" {
     loadContext(file: string): void;
     loadFixture(file: string): string;
     loadPushContext(): void;
-    loadIssueCommentContext({action: string}): void;
+    loadIssueCommentContext({action: string, issueNumber: number}): void;
     loadLabelContext({action: string}): void;
-    loadIssueContext({action:string, issueBody: string}): void;
-    loadIssueLabeledContext({adction: string, issueBody: string}): void;
+    loadIssueContext({action:string, issueBody: string, issueNumber: number}): void;
+    loadIssueLabeledContext({adction: string, issueBody: string, issueNumber: number}): void;
     setup(): void;
   }
 }
