@@ -645,23 +645,23 @@ class octomock {
     this.loadContext('./fixtures/push.json');
   }
 
-  loadIssueContext(action = 'created') {
+  loadIssueCommentContext({ action = 'created' }) {
     this.loadContext('./fixtures/issue_comment.json');
     this.mockGitHubImplementation.context.payload.event.action = action;
   }
 
-  loadLabelContext(action = 'created') {
+  loadLabelContext({ action = 'created' }) {
     this.loadContext('./fixtures/label.json');
     this.mockGitHubImplementation.context.payload.event.action = action;
   }
 
-  loadIssueContext(action = 'opened', issueBody = 'Body') {
+  loadIssueContext({ action = 'opened', issueBody = 'Body' }) {
     this.loadContext('./fixtures/issue_created.json');
     this.mockGitHubImplementation.context.payload.event.action = action;
     this.mockGitHubImplementation.context.payload.event.issue.body = issueBody;
   }
 
-  loadIssueLabeledContext(action = 'labeled', issueBody = 'Body') {
+  loadIssueLabeledContext({ action = 'labeled', issueBody = 'Body' }) {
     this.loadContext('./fixtures/issue_created.json');
     this.mockGitHubImplementation.context.payload.event.action = action;
     this.mockGitHubImplementation.context.payload.event.issue.body = issueBody;
