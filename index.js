@@ -632,7 +632,7 @@ class octomock {
         ? path.join(__dirname, file)
         : path.join(__dirname, '../../', file);
     const raw = fs.readFileSync(absolute_file_path, 'utf8');
-    this.mockGitHubImplementation.context = JSON.parse(raw);
+    this.mockGitHubImplementation.context.payload = JSON.parse(raw);
   }
 
   loadFixture(file) {
