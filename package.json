@@ -1,6 +1,6 @@
 {
   "name": "octomock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mocking libary for GitHub Actions",
   "main": "index.js",
   "scripts": {
