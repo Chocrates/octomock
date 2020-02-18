@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json",
-    "lint": "eslint **/*.js"
+    "lint": "eslint **/*.js",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
