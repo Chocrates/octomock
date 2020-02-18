@@ -5,14 +5,17 @@ This library is intented to simplify that process so you can get to testing your
 ## Usage 
 
 There are a couple steps needed to use the libary currently
+* Add the GitHub registry
+    * Create a file `.npmrc` with the following content:  
+    ```@chocrates:registry=https://npm.pkg.github.com/```
 * Install the library
- ```$ npm install --save-dev https://github.com/Chocrates/octomock.git```
+ ```$ npm install --save-dev @chocrates/octomock```
  
  * Create a Jest setup file:
  
 ```javascript
 //setupJest.js
-const { octomock } = require("octomock");
+const { octomock } = require("@chocrates/octomock");
 global.octomock = new octomock();
 global.octomock.setup();
 ```
@@ -61,7 +64,7 @@ Changing the output of a mocked function:
 //main.test.js
 
 let contents = { test: "data" }
-octomock.mockFunctions.getContents.mockReturnValue({
+octomock.mockFunctions.repos.getContents.mockReturnValue({
   return {
     data: {
       content: Buffer.from(JSON.stringify(contents)).toString("base64") 
@@ -70,17 +73,50 @@ octomock.mockFunctions.getContents.mockReturnValue({
 })
 ```
 
-Finally, setting up the inputs into the actions is easy:  
+Setting up the inputs into the actions is easy:  
 
 ```javascript
 //main.test.js
 
 beforeEach(() => {
+  octomock.resetMocks() // Resets all mock functions
   let coreImpl = octomock.getCoreImplementation()
   coreImpl.getInput = jest.fn()
     .mockReturnValueOnce('First Input')
     .mockReturnValueOnce("Second Input")
   octomock.updateCoreImplementation(coreImpl)
+}
+```
+
+Specify which type of context you would like to load:  
+```javascript
+//main.test.js
+
+beforeEach(() => {
+  octomock.resetMocks() // Resets all mock functions
+  octomock.loadIssueLabeledContext({
+    issueBody: "I am an issue body!",
+    issueNumber: 1
+  })
+}
+```
+
+Currently we have fixtures for:  
+* Issue Comments
+* Issue Created
+* Issue Labeled
+* Label events
+* Push events
+
+
+Load a custom context from within your project:
+
+```javascript
+//main.test.js
+
+beforeEach(() => {
+  octomock.resetMocks() // Resets all mock functions
+  octomock.loadFixture('__tests__/fixtures/context.json')
 }
 ```
 
