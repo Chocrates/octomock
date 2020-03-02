@@ -1,4 +1,4 @@
-declare module "octomock" {
+declare module "@chocrates/octomock" {
   class octomock {
     constructor();
     logger: any;

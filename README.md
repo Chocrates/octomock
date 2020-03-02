@@ -32,6 +32,58 @@ global.octomock.setup();
 }
 ```
 
+### Typescript
+We bundle the type definition for Typescript with the library.  Setup for typescript is a bit different than Javascript
+* Create the Jest Setup File
+
+```typescript
+//setupJest.ts
+import { octomock as om } from '@chocrates/octomock';
+(global as any).octomock = new om();
+(global as any).octomock.setup();
+```
+* Add setup Types file
+ 
+```typescript
+//setupJest.d.ts
+declare var octomock: any;
+```
+
+* Add types to tsconfig
+
+```json
+//tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "strict": true
+  },
+  files: ["./setupJest.d.ts"]
+}
+```
+
+* Add the setup file to the Jest config
+```javascript
+// jest.config.js
+module.exports = {
+    clearMocks: true,
+    moduleFileExtensions: [ 'js', 'ts' ],
+    testEnvironment: 'node',
+    testMatch: [ '**/*.test.ts'],
+    testRunner: 'jest-circus/runner',
+    transform: {
+        '^.+\\.ts$': 'ts-jest'
+    },
+    verbose: true,
+    setupFilesAfterEnv: [
+        './setupJest.ts'
+    ]
+}
+```
+*Note*: I am not so good with Typescript.  If anybody has any improvements to the docs or the code so the module is a better member of the community, PR's would be greatly appreciated
+
 ## Examples
 Mocking is setup in the Jest setup file.  It will add the `octomock` instance to the global variables for you to use in your tests
 A simple mock and assert utizilizing the library:
