@@ -60,7 +60,7 @@ declare var octomock: any;
     "rootDir": "./src",
     "strict": true
   },
-  files: ["./setupJest.d.ts"]
+  "files": ["./setupJest.d.ts"]
 }
 ```
 
