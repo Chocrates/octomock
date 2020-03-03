@@ -7,7 +7,7 @@
     "test": "jest",
     "format": "prettier --write **/*.js **/*.json",
     "lint": "eslint **/*.js",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
