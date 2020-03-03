@@ -645,10 +645,15 @@ class octomock {
     this.loadContext('./fixtures/push.json');
   }
 
-  loadIssueCommentContext({ action = 'created', issueNumber = 1 }) {
+  loadIssueCommentContext({
+    action = 'created',
+    issueNumber = 1,
+    issueAuthorLogin = 'Chocrates',
+  }) {
     this.loadContext('./fixtures/issue_comment.json');
     this.mockGitHubImplementation.context.payload.action = action;
     this.mockGitHubImplementation.context.payload.issue.number = issueNumber;
+    this.mockGitHubImplementation.context.payload.issue.user.login = issueAuthorLogin;
   }
 
   loadLabelContext({ action = 'created' }) {
@@ -656,22 +661,30 @@ class octomock {
     this.mockGitHubImplementation.context.payload.action = action;
   }
 
-  loadIssueContext({ action = 'opened', issueBody = 'Body', issueNumber = 1 }) {
+  loadIssueContext({
+    action = 'opened',
+    issueBody = 'Body',
+    issueNumber = 1,
+    issueAuthorLogin = 'Chocrates',
+  }) {
     this.loadContext('./fixtures/issue_created.json');
     this.mockGitHubImplementation.context.payload.action = action;
     this.mockGitHubImplementation.context.payload.issue.body = issueBody;
     this.mockGitHubImplementation.context.payload.issue.number = issueNumber;
+    this.mockGitHubImplementation.context.payload.issue.user.login = issueAuthorLogin;
   }
 
   loadIssueLabeledContext({
     action = 'labeled',
     issueBody = 'Body',
     issueNumber = 1,
+    issueAuthorLogin = 'Chocrates',
   }) {
     this.loadContext('./fixtures/issue_labeled.json');
     this.mockGitHubImplementation.context.payload.action = action;
     this.mockGitHubImplementation.context.payload.issue.body = issueBody;
     this.mockGitHubImplementation.context.payload.issue.number = issueNumber;
+    this.mockGitHubImplementation.context.payload.issue.user.login = issueAuthorLogin;
   }
 
   setup() {

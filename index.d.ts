@@ -16,10 +16,10 @@ declare module "@chocrates/octomock" {
     loadContext(file: string): void;
     loadFixture(file: string): string;
     loadPushContext(): void;
-    loadIssueCommentContext({action: string, issueNumber: number}): void;
+      loadIssueCommentContext({action: string, issueNumber: number, issueAuthorLogin: string}): void;
     loadLabelContext({action: string}): void;
-    loadIssueContext({action:string, issueBody: string, issueNumber: number}): void;
-    loadIssueLabeledContext({adction: string, issueBody: string, issueNumber: number}): void;
+      loadIssueContext({action:string, issueBody: string, issueNumber: number, issueAuthorLogin: string}): void;
+      loadIssueLabeledContext({adction: string, issueBody: string, issueNumber: number, issueAuthorLogin: string}): void;
     setup(): void;
   }
 }
