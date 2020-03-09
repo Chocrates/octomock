@@ -608,6 +608,43 @@ class octomock {
               mockFunctions.issues.listForAuthenticatedUser,
             updateLabel: mockFunctions.issues.updateLabel,
           };
+
+          this.actions = {
+            cancelWorkflowRun: mockFunctions.actions.cancelWorkflowRun,
+            createOrUpdateSecretForRepo:
+              mockFunctions.actions.createOrUpdateSecretForRepo,
+            createRegistrationToken:
+              mockFunctions.actions.createRegistrationToken,
+            createRemoveToken: mockFunctions.actions.createRemoveToken,
+            deleteArtifact: mockFunctions.actions.deleteArtifact,
+            deleteSecretFromRepo: mockFunctions.actions.deleteSecretFromRepo,
+            downloadArtifact: mockFunctions.actions.downloadArtifact,
+            getArtifact: mockFunctions.actions.getArtifact,
+            getPublicKey: mockFunctions.actions.getPublicKey,
+            getSecret: mockFunctions.actions.getSecret,
+            getSelfHostedRunner: mockFunctions.actions.getSelfHostedRunner,
+            getWorkflow: mockFunctions.actions.getWorkflow,
+            getWorkflowJob: mockFunctions.actions.getWorkflowJob,
+            getWorkflowRun: mockFunctions.actions.getWorkflowRun,
+            listArtifactsForRepo: mockFunctions.actions.listArtifactsForRepo,
+            listDownloadsForSelfHostedRunnerApplication:
+              mockFunctions.actions.listDownloadsForSelfHostedRunnerApplication,
+            listJobsForWorkflowRun:
+              mockFunctions.actions.listJobsForWorkflowRun,
+            listRepoWorkflowRuns: mockFunctions.actions.listRepoWorkflowRuns,
+            listRepoWorkflows: mockFunctions.actions.listRepoWorkflows,
+            listSecretsForRepo: mockFunctions.actions.listSecretsForRepo,
+            listSelfHostedRunnersForRepo:
+              mockFunctions.actions.listSelfHostedRunnersForRepo,
+            listWorkflowJobLogs: mockFunctions.actions.listWorkflowJobLogs,
+            listWorkflowRunArtifacts:
+              mockFunctions.actions.listWorkflowRunArtifacts,
+            listWorkflowRunLogs: mockFunctions.actions.listWorkflowRunLogs,
+            listWorkflowRuns: mockFunctions.actions.listWorkflowRuns,
+            reRunWorkflow: mockFunctions.actions.reRunWorkflow,
+            removeSelfHostedRunner:
+              mockFunctions.actions.removeSelfHostedRunner,
+          };
         }
       },
     };
