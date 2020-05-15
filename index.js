@@ -650,11 +650,21 @@ class octomock {
     };
 
     this.mockCoreImplementation = {
-      debug: this.mockFunctions.core.debug,
-      info: this.mockFunctions.core.info,
-      setFailed: this.mockFunctions.core.setFailed,
-      setOutput: this.mockFunctions.core.setOutput,
+      exportVariable: this.mockFunctions.core.exportVariable,
+      setSecret: this.mockFunctions.core.setSecret,
+      addPath: this.mockFunctions.core.addPath,
       getInput: this.mockFunctions.core.getInput,
+      setOutput: this.mockFunctions.core.setOutput,
+      setFailed: this.mockFunctions.core.setFailed,
+      debug: this.mockFunctions.core.debug,
+      error: this.mockFunctions.core.error,
+      warning: this.mockFunctions.core.warning,
+      info: this.mockFunctions.core.info,
+      startGroup: this.mockFunctions.core.startGroup,
+      endGroup: this.mockFunctions.core.endGroup,
+      group: this.mockFunctions.core.group,
+      saveState: this.mockFunctions.core.saveState,
+      getState: this.mockFunctions.core.getState,
     };
   }
 
