@@ -288,7 +288,7 @@ class octomock {
         getInput: jest.fn(value => value),
         setOutput: jest.fn(),
         setFailed: jest.fn(message => {
-          this.logger.error(`MOCK ERROR: ${message}`);
+          this.logger.error(`MOCK FAILED: ${message}`);
         }),
         debug: jest.fn(message => {
           this.logger.info(`MOCK DEBUG: ${message}`);
@@ -297,7 +297,7 @@ class octomock {
           this.logger.error(`MOCK ERROR: ${message}`);
         }),
         warning: jest.fn(message => {
-          this.logger.warning(`MOCK WARNING: ${message}`);
+          this.logger.info(`MOCK WARNING: ${message}`);
         }),
         info: jest.fn(message => {
           this.logger.info(`MOCK INFO: ${message}`);
