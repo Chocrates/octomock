@@ -5,17 +5,14 @@ This library is intented to simplify that process so you can get to testing your
 ## Usage 
 
 There are a couple steps needed to use the libary currently
-* Add the GitHub registry
-    * Create a file `.npmrc` with the following content:  
-    ```@chocrates:registry=https://npm.pkg.github.com/```
 * Install the library
- ```$ npm install --save-dev @chocrates/octomock```
+ ```$ npm install --save-dev octomock```
  
  * Create a Jest setup file:
  
 ```javascript
 //setupJest.js
-const { octomock } = require("@chocrates/octomock");
+const { octomock } = require("octomock");
 global.octomock = new octomock();
 global.octomock.setup();
 ```
@@ -38,7 +35,7 @@ We bundle the type definition for Typescript with the library.  Setup for typesc
 
 ```typescript
 //setupJest.ts
-import { octomock as om } from '@chocrates/octomock';
+import { octomock as om } from 'octomock';
 (global as any).octomock = new om();
 (global as any).octomock.setup();
 ```
@@ -104,7 +101,7 @@ module.exports = { main }
 describe("Main", () => {
   it("Calls getContents once", async () => {
     await main.main();
-    expect(octomock.mockFunctions.getContents).toHaveBeenCalledTimes(1);
+    expect(octomock.mockFunctions.repos.getContents).toHaveBeenCalledTimes(1);
     })
   })
 ```
