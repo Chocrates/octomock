@@ -1,38 +1,38 @@
 {
-  "name": "octomock",
-  "version": "2.1.1",
-  "description": "Mocking libary for GitHub Actions",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "format": "prettier --write **/*.js **/*.json",
-    "lint": "eslint **/*.js",
-    "postversion": "git push && git push --tags && npm publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Chocrates/octomock.git"
-  },
-  "author": "Chris McIntosh (Chocrates@github.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Chocrates/octomock/issues"
-  },
-  "homepage": "https://github.com/Chocrates/octomock#readme",
-  "dependencies": {
-    "jest": "^24.9.0",
-    "winston": "^3.2.1"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.19.1"
-  },
-  "types": "./index.d.ts"
+    "name": "octomock",
+    "version": "2.1.1",
+    "description": "Mocking libary for GitHub Actions",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "format": "prettier --write **/*.js **/*.json",
+        "lint": "eslint **/*.js",
+        "postversion": "git push && git push --tags && npm publish"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Chocrates/octomock.git"
+    },
+    "author": "Chris McIntosh (Chocrates@github.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Chocrates/octomock/issues"
+    },
+    "homepage": "https://github.com/Chocrates/octomock#readme",
+    "dependencies": {
+        "jest": "^24.9.0",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-promise": "^4.3.1",
+        "eslint-plugin-standard": "^4.1.0",
+        "prettier": "^1.19.1"
+    },
+    "types": "./index.d.ts"
 }
