@@ -5,12 +5,12 @@
   "commits": [
     {
       "author": {
-        "email": "chocrates@github.com",
+        "email": "CHRISTESTCHRI@github.com",
         "name": "Chris McIntosh",
         "username": "Chocrates"
       },
       "committer": {
-        "email": "chocrates@github.com",
+        "email": "CHRISTESTCHRI@github.com",
         "name": "Chris McIntosh",
         "username": "Chocrates"
       },
@@ -28,12 +28,12 @@
   "forced": false,
   "head_commit": {
     "author": {
-      "email": "chocrates@github.com",
+      "email": "CHRISTESTCHRI@github.com",
       "name": "Chris McIntosh",
       "username": "Chocrates"
     },
     "committer": {
-      "email": "chocrates@github.com",
+      "email": "CHRISTESTCHRI@github.com",
       "name": "Chris McIntosh",
       "username": "Chocrates"
     },

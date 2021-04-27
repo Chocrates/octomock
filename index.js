@@ -756,7 +756,7 @@ class octomock {
 
     loadContext(file) {
         const absolute_file_path =
-            __dirname.indexOf('node_modules/@chocrates/octomock') != -1
+            __dirname.indexOf('node_modules/@CHRISTESTCHRI/octomock') != -1
                 ? path.join(__dirname, file)
                 : path.join(__dirname, '../../../', file);
         const raw = fs.readFileSync(absolute_file_path, 'utf8');
